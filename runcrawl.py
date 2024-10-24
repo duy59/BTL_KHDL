@@ -9,15 +9,15 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 async def main():
     list_cat = [
-        'https://vneconomy.vn/start-up.htm',
-        "https://vneconomy.vn/dau-tu.htm",
-
+        'https://vneconomy.vn/chung-khoan.htm',
+        ''
     ]
 
     all_data = []
 
     for cat in list_cat:
         urls = await crawl_list(cat)
+        print(urls)
         for url in urls:
             data = await crawl_detail(url)
             all_data.append(data)
